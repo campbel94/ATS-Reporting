@@ -3,46 +3,40 @@ Repo for all ATS reporting, forecasting and data viz
 
 ## BigQuery Tables
 ### liveramp-eng-pie.ats_metrics.ats_requests_by_publisher
-|Field name |  Type  |
-|-----------|--------|
-| day       |   DATE |
-| country_code |   STRING |
-|-----------|--------|
-| publisher |   INTEGER |
-|-----------|--------|
-| config_name |   STRING |
-|-----------|--------|
-|request_types| STRING |
-|-----------|--------|
-| total_request | FLOAT |
-- day
-- country_code
-- publisher
-- config_name
-- request_types	
-- total_request
+|Field name     |  Type   |
+|---------------|---------|
+| day           |   DATE  |
+| country_code  | STRING  |
+| publisher     | INTEGER |
+| config_name   |  STRING |
+|request_types  |  STRING |
+| total_request |   FLOAT |
 
-liveramp-eng-pie.ats_metrics.ats_requests_by_publisher_AU
-- day
-- country_code
-- publisher_id
-- config_name
-- request_types	
-- total_request
+### liveramp-eng-pie.ats_metrics.ats_requests_by_publisher_AU
+|Field name     |  Type   |
+|---------------|---------|
+| day           | DATE    |
+| country_code  | STRING  |
+| publisher_id  | INTEGER |
+| config_name   | STRING  |
+| request_types | STRING  |
+| total_request | FLOAT   |
 
-liveramp-eng-ps.ats_reporting.ats_publisher_stats
-- publisher_id
-- domain
-- browser_type
-- os_type
-- device_type
-- city
-- country_code
-- envelope_request_type
-- request_date
-- rampid_sketch	
-- rampid_source
-- request_count
+### liveramp-eng-ps.ats_reporting.ats_publisher_stats
+|Field name             |  Type   |
+|-----------------------|---------|
+| publisher_id          | INTEGER |
+| domain                | STRING  |
+| browser_type          | STRING  |
+| os_type               | STRING  |
+| device_type           | STRING  |
+| city                  | STRING  |
+| country_code          | STRING  |
+| envelope_request_type | STRING  |
+| request_date          | DATE    |
+| rampid_sketch         | BYTES   |
+| rampid_source         | STRING  |
+| request_count         | INTEGER |
 
 ## SQL Queries
 Non AU Countries:
