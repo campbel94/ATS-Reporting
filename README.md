@@ -1,6 +1,37 @@
 # ATS-Reporting
 Repo for all ATS reporting, forecasting and data viz
 
+## BigQuery Tables
+liveramp-eng-pie.ats_metrics.ats_requests_by_publisher
+- day
+- country_code
+- publisher
+- config_name
+- request_types	
+- total_request
+
+liveramp-eng-pie.ats_metrics.ats_requests_by_publisher_AU
+- day
+- country_code
+- publisher_id
+- config_name
+- request_types	
+- total_request
+
+liveramp-eng-ps.ats_reporting.ats_publisher_stats
+- publisher_id
+- domain
+- browser_type
+- os_type
+- device_type
+- city
+- country_code
+- envelope_request_type
+- request_date
+- rampid_sketch	
+- rampid_source
+- request_count
+
 ## SQL Queries
 Non AU Countries:
 ```SQL
