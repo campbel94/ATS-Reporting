@@ -2,11 +2,10 @@
 Repo for all ATS reporting, forecasting and data viz
 
 ## BigQuery Tables
-### liveramp-eng-pie.ats_metrics.ats_requests_by_publisher|
+### liveramp-eng-pie.ats_metrics.ats_requests_by_publisher
 |Field name |  Type  |
 |-----------|--------|
 | day       |   DATE |
-|-----------|--------|
 | country_code |   STRING |
 |-----------|--------|
 | publisher |   INTEGER |
