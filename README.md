@@ -58,3 +58,27 @@ AND day <= '2023-09-30'
 GROUP BY day, country_code, publisher_id, config_name, request_types
 ORDER BY day, country_code, publisher_id, request_types
 ```
+7 nad 30-day rolling averages
+```SQL
+SELECT publisher_id, envelope_request_type, request_date, SUM(request_count) AS envelopes, AVG(SUM(request_count))
+  OVER (
+    ORDER BY request_date
+    ROWS BETWEEN 7 PRECEDING AND 0 FOLLOWING
+  ) as avg_7_day, AVG(SUM(request_count))
+  OVER (
+    ORDER BY request_date
+    ROWS BETWEEN 30 PRECEDING AND 0 FOLLOWING
+  ) as avg_30_day
+FROM `liveramp-eng-ps.ats_reporting.ats_publisher_stats` as stats
+WHERE publisher_id = 13735
+AND request_date >= "2023-07-01"
+AND rampid_source = 'not cookie'
+-- how to filter out pubs who haven't been live for past two months
+GROUP BY publisher_id, country_code, envelope_request_type, request_date
+ORDER BY request_date;
+```
+
+Pubs Dips to look into:
+- McClatchy drop starting 9/27
+- Trib & MNG increase on 9/26
+- LA Times 9/28
