@@ -1,0 +1,4 @@
+Envelope change monitoring (separate from any timeseries / ARIMA models)
+
+What we want:
+- DoD, WoW and MoM change in envelope volumes that are worth investigating
