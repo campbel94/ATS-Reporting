@@ -16,11 +16,15 @@ Script that can be run for easy outputs (possibly visualizations)
 
 ## SQL Query:
 ```SQL
-SELECT ...
-FROM ...
-WHERE ...
-ORDER BY ...
+SELECT day, country_code, publisher, config_name, request_types, SUM(total_request) as requests
+FROM `liveramp-eng-pie.ats_metrics.ats_requests_by_publisher`
+WHERE day >= DATE_SUB(CURRENT_DATE, INTERVAL 56 DAY)
+AND day <= DATE_SUB(CURRENT_DATE, INTERVAL 1 DAY)
+AND country_code = 'US'
+GROUP BY day, country_code, publisher, config_name, request_types
+ORDER BY day, country_code, publisher, request_types
 ```
+<b>NOTE:</b> this data is limited to the US for the sake of downloading to a local CSV file. Ideally (through Google Collab) this wouldn't be a limitation.
 
 ## Steps:
 1. Filter the last two months worth of data for just pubs with significanat volume contribution (TBD on what exactly that threshold is).
