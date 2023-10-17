@@ -9,6 +9,7 @@ Example dips that would be worth looking into:
 - McClatchy drop starting 9/27
 - Trib & MNG increase on 9/26
 - LA Times 9/28
+- Future Publishing 10/5
 
 
 ## Expect Output
