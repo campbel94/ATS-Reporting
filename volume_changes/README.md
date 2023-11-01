@@ -10,6 +10,8 @@ Example dips that would be worth looking into:
 - Trib & MNG increase on 9/26
 - LA Times 9/28
 - Future Publishing 10/5
+- Playwire 10.26
+- Immobilienscout24 9.20
 
 
 ## Expect Output

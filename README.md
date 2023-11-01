@@ -77,8 +77,3 @@ AND rampid_source = 'not cookie'
 GROUP BY publisher_id, country_code, envelope_request_type, request_date
 ORDER BY request_date;
 ```
-
-Pubs Dips to look into:
-- McClatchy drop starting 9/27
-- Trib & MNG increase on 9/26
-- LA Times 9/28

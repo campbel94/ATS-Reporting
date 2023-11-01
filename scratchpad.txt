@@ -2,3 +2,20 @@ Envelope change monitoring (separate from any timeseries / ARIMA models)
 
 What we want:
 - DoD, WoW and MoM change in envelope volumes that are worth investigating
+
+
+
+window.addEventListener("fbEnvelopePresent", function() {
+            console.log("[ATS DIRECT PASS] - envelopeModuleReady event fired. ATS ready to retrieve envelope");
+
+            // loop through local storage looking for the Auth0 or trb.registration.userData objects that contain user emails
+            // if either exist, parse out the email value and pass it to ATS
+            for (var n = 0, len = localStorage.length; n < len; ++n) {
+                var thisKey = localStorage.key(n);
+                if (thisKey.includes("@@auth0spajs@@::")) {
+                    atsenvelopemodule.setAdditionalData({'type':'email','id':JSON.parse(localStorage.getItem(thisKey))});
+
+
+window.addEventListener("fbEnvelopePresent", function() {
+	ats.sendFbEvents()
+}
